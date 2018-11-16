@@ -1,4 +1,5 @@
 import React from 'react'
+import CommentList from './CommentList'
 
 class Article extends React.PureComponent {
         
@@ -10,6 +11,7 @@ class Article extends React.PureComponent {
         this.props.toggleVisibility(this.props.article.id);
     }
 
+    
 
     render() {
         console.log('Render Article');
@@ -18,7 +20,7 @@ class Article extends React.PureComponent {
             <div>
                 {article.title}
                 <button onClick={this.handleClick}>{isOpen ? "Close" : "Open"}</button>
-                {isOpen ? <p>{article.text}</p> : null}
+                {isOpen ? <p>{article.text}<CommentList comments={article.comments} /></p> : null}
             </div> 
         )
     }
