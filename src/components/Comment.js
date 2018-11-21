@@ -2,15 +2,11 @@ import React from 'react'
 
 class Comment extends React.Component {
 
-    state = {
-        isOpen: false,
-    }
-
     render() {
-        const text = this.props.text;
+        const {isOpen, text} = this.props;
         return(
             <div>
-                {this.state.isOpen ? text : null}
+                {isOpen ? text : null}
             </div>
         )
     }
