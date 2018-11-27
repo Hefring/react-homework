@@ -4,9 +4,9 @@ class Comment extends React.Component {
 
     render() {
         const {isOpen, text} = this.props;
-        return(
+        return (
             <div>
-                {isOpen ? text : null}
+                {isOpen ? <li>{text}</li> : null}
             </div>
         )
     }

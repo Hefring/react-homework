@@ -1,8 +1,19 @@
 import React from 'react'
 import CommentList from './CommentList'
 
-class Article extends React.PureComponent {
-        
+class Article extends React.PureComponent { 
+
+    state = {
+        hasError: null
+    }
+    
+    componentDidCatch(error) {
+        this.setState({
+            hasError: true,
+        })
+    }
+
+
     handleClick = () => {
         if(this.props.isOpen === true) {
             this.props.toggleVisibility(null);
@@ -18,9 +29,9 @@ class Article extends React.PureComponent {
         const {article, isOpen} = this.props; 
         return (
             <div>
-                {article.title}
+                <h2>{article.title}</h2>
                 <button onClick={this.handleClick}>{isOpen ? "Close" : "Open"}</button>
-                {isOpen ? <p>{article.text}<CommentList comments={article.comments} /></p> : null}
+                {isOpen ? <section>{article.text}{this.state.hasError ? null : <CommentList comments={article.comments}/>}</section> : null}
             </div> 
         )
     }
