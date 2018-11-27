@@ -5,9 +5,9 @@ class Comment extends React.Component {
     render() {
         const {isOpen, text} = this.props;
         return (
-            <div>
-                {isOpen ? <li>{text}</li> : null}
-            </div>
+            <li>
+                {text}
+            </li>
         )
     }
 }

@@ -24,7 +24,6 @@ class CommentList extends React.Component {
                             <Comment     
                                 key={comment.id}
                                 text={comment.text}
-                                isOpen={this.state.isOpen}
                             />
                         )}
                     </ul>
