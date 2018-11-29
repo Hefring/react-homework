@@ -2,6 +2,7 @@ import React from 'react'
 import Article from './Article'
 import Calendar from './Calendar'
 import Select from 'react-select'
+import {connect} from 'react-redux'
 
 
 class ArticleList extends React.Component {
@@ -24,14 +25,13 @@ class ArticleList extends React.Component {
     }
 
     render() {
-        const {articles} = this.props;
         return(
             <div>
-                <Select isMulti={true} value={this.state.searchObj} onChange={this.onChangeInput} options={articles.map(article => {
+                <Select isMulti={true} value={this.state.searchObj} onChange={this.onChangeInput} options={this.props.articles.map(article => {
                         return {value: article.id, label: article.title}
                     })} />
                 <Calendar/>
-                {articles.map(article => 
+                {this.props.articles.map(article => 
                     <Article 
                         article={article}
                         key={article.id} 
@@ -44,4 +44,10 @@ class ArticleList extends React.Component {
     }
 }
 
-export default ArticleList
+export default connect(
+    (state) => {
+        return {
+            articles: state.articles
+        }
+    }
+) (ArticleList)

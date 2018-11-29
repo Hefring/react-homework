@@ -11,7 +11,7 @@ class App extends React.Component {
       <Provider store={store}>
         <div className="App">
           <Counter />
-          <ArticleList articles={articles} />
+          <ArticleList />
         </div>
       </Provider>
     );

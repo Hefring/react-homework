@@ -1,1 +1,2 @@
 export const INCREASE = 'INCREASE'
+export const DELETE_ACTICLE = 'DELETE_ARTICLE'
