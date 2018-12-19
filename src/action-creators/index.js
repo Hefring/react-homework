@@ -1,4 +1,4 @@
-import {INCREASE, DELETE_ACTICLE} from '../action-types' 
+import {INCREASE, DELETE_ARTICLE, FILTER_ARTICLES} from '../action-types' 
 
 export const count = () => {
     return {
@@ -7,9 +7,18 @@ export const count = () => {
 }
 export const deleteArticle = (id) => {
     return {
-        type: DELETE_ACTICLE,
+        type: DELETE_ARTICLE,
         payLoad: {
             id
+        }
+    }
+}
+
+export const filterArticles = (articles) => {
+    return {
+        type: FILTER_ARTICLES,
+        payLoad: {
+            articles: articles
         }
     }
 }

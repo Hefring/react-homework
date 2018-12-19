@@ -14,10 +14,6 @@ class ArticleList extends React.Component {
     }
     
     toggleVisibility = (id) => {
-        // if(this.state.openArticleId === id) {
-        //     this.setState({openArticleId: null});
-        //     return;
-        // }
         this.setState({openArticleId: id})
     }
     onChangeInput = selectedOption => {
@@ -47,7 +43,7 @@ class ArticleList extends React.Component {
 export default connect(
     (state) => {
         return {
-            articles: state.articles
+            articles: state.articles.articles
         }
     }
 ) (ArticleList)
