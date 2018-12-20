@@ -30,7 +30,6 @@ class Article extends React.PureComponent {
     
 
     render() {
-        
         const {article, isOpen} = this.props; 
         return (
             <div>

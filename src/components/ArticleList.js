@@ -3,6 +3,7 @@ import Article from './Article'
 import Calendar from './Calendar'
 import Select from 'react-select'
 import {connect} from 'react-redux'
+import {filterArticles} from '../action-creators'
 
 
 class ArticleList extends React.Component {
@@ -43,7 +44,12 @@ class ArticleList extends React.Component {
 export default connect(
     (state) => {
         return {
-            articles: state.articles.articles
+            articles: state.articles
+        }
+    },
+    (dispatch) => {
+        return {
+            filterArticles: dispatch(filterArticles())
         }
     }
 ) (ArticleList)

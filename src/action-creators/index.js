@@ -14,11 +14,8 @@ export const deleteArticle = (id) => {
     }
 }
 
-export const filterArticles = (articles) => {
+export const filterArticles = () => {
     return {
-        type: FILTER_ARTICLES,
-        payLoad: {
-            articles: articles
-        }
+        type: FILTER_ARTICLES
     }
 }
